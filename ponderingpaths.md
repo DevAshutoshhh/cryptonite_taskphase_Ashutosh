@@ -1,6 +1,6 @@
 # 1- the root
 # 2- programme and absolute paths
-
+accessing absolute path using /challenge/run
 # 3- position the self
 i went to challenge in the current directory </br>
 it said you are not in etc </br>
