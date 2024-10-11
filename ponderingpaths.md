@@ -38,4 +38,14 @@ after accessing th / </br>
 not using / as its relative path we use -> challenge/run</br>
 for the solution
 
-# 7-
+# 7-Implicit Relative Path
+Navigate to root (/) and run challenge/run from the current directory to get the flag.
+
+# 8-Explicit Relative Path
+Running `./challenge/run `from root works the same as `challenge/run`.
+
+# 9-Explicit Current Directory
+Go to `/challenge` and run `./run` to get the flag.
+
+# 10-Home Directory
+Use `~/a` as the argument for `/challenge/run` to meet the requirements and get the flag.
