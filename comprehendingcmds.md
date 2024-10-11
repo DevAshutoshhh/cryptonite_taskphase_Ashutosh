@@ -120,7 +120,9 @@ to find files at given location
 `find / -name flag -type f`
 then access using cat `(path found)`
 
-# 12. Linking Files
-# Use ln -s to create a symbolic link to /flag, then run catflag.
+## 12. Linking Files
+Use ln -s to create a symbolic link to /flag, then run catflag.
+
 `ln -s /flag ~/not-the-flag`
+
 `/challenge/catflag`
