@@ -50,10 +50,10 @@ Solution - `PWN=$(/challenge/run)`
 # 7- Reading Input
 Here is an example using the -p argument, which lets you specify a prompt (otherwise, it would be hard for you, reading this now, to separate input from output in the example below):<br><br>
 
-hacker@dojo:~$ read -p "INPUT: " MY_VARIABLE<br>
-INPUT: Hello!<br>
-hacker@dojo:~$ echo "You entered: $MY_VARIABLE"<br>
-You entered: Hello!<br><br>
+`hacker@dojo:~$ read -p "INPUT: " MY_VARIABLE`<br>
+`INPUT: Hello!`<br>
+`hacker@dojo:~$ echo "You entered: $MY_VARIABLE"`<br>
+`You entered: Hello!`<br><br>
 
 # 8- Reading Files
 With `-p`: You can show a message to prompt the user before waiting for input.<br>
