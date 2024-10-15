@@ -48,12 +48,6 @@ Solution:
 ## 9-Duplicating Piped Data with Tee  
 `tee` duplicates data flowing through pipes and stores it in files.  
 Solution:  
-`touch random`.  
-`/challenge/pwn | tee random | /challenge/college`  
-`cat random`
-`/challenge/pwn --secret [arg] | /challenge/college` to get the flag.  
-`cat random`  
-`/challenge/pwn --secret [arg] | /challenge/college`
 
 ## 10-Writing to Multiple Programs  
 `tee` can duplicate output to multiple commands.  
