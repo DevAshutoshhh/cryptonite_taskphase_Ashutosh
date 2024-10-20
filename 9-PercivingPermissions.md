@@ -103,25 +103,58 @@ Solution - in this question i dont have the permission to change the ownership o
 When you invoke a program, such as /challenge/run, Linux will only actually execute it if you have execute-access to the program file
 
 Solution -
--hacker@permissions~executable-files:/$ cd
--hacker@permissions~executable-files:~$ /challenge/run
--bash: /challenge/run: Permission denied
--hacker@permissions~executable-files:~$ chmod o+x /challenge/run
--hacker@permissions~executable-files:~$ /challenge/run
--bash: /challenge/run: Permission denied
--hacker@permissions~executable-files:~$ cd /challenge/run
--bash: cd: /challenge/run: Not a directory
--hacker@permissions~executable-files:~$ cd /challenge
--hacker@permissions~executable-files:/challenge$ ./run
--bash: ./run: Permission denied
--hacker@permissions~executable-files:/challenge$ chmod o+x ./run
--hacker@permissions~executable-files:/challenge$ ./run
--bash: ./run: Permission denied
--hacker@permissions~executable-files:/challenge$ chmod u+x ./run
--hacker@permissions~executable-files:/challenge$ ./run
--Successful execution! Here is your flag:
--pwn.college{kib-SbIEzdB0flpEwgG3tktFUHU.dJTM2QDLzQTO0czW}
+-`hacker@permissions~executable-files:/$ cd` <br>
+-`hacker@permissions~executable-files:~$ /challenge/run`<br>
+-`bash: /challenge/run: Permission denied`<br>
+-`hacker@permissions~executable-files:~$ chmod o+x /challenge/run`<br>
+-`hacker@permissions~executable-files:~$ /challenge/run`<br>
+-`bash: /challenge/run: Permission denied`<br>
+-`hacker@permissions~executable-files:~$ cd /challenge/run`<br>
+-`bash: cd: /challenge/run: Not a directory`<br>
+-`hacker@permissions~executable-files:~$ cd /challenge`<br>
+-`hacker@permissions~executable-files:/challenge$ ./run`<br>
+-`bash: ./run: Permission denied`<br>
+-`hacker@permissions~executable-files:/challenge$ chmod o+x ./run`<br>
+-`hacker@permissions~executable-files:/challenge$ ./run`<br>
+-`bash: ./run: Permission denied`<br>
+-`hacker@permissions~executable-files:/challenge$ chmod u+x ./run`<br>
+-`hacker@permissions~executable-files:/challenge$ ./run`<br>
+-`Successful execution! Here is your flag:`<br>
+-`pwn.college{kib-SbIEzdB0flpEwgG3tktFUHU.dJTM2QDLzQTO0czW}`<br>
 
 ## 6- Permission Tweaking Practise
 
 On following the user instructions we get the flag
+
+## 7- Permission Setting Practise
+
+If you want to change user permissions in a different way as group permissions? Say, you want to set rw for the owning user, but only r for the owning group? You can achieve this by chaining multiple modes to chmod with ,!
+
+chmod u=rw,g=r /challenge/pwn will set the user permissions to read and write, and the group permissions to read-only
+chmod a=r,u=rw /challenge/pwn will set the user permissions to read and write, and the group and world permissions to read-only
+
+Additionally, you can zero out permissions with -:
+
+chmod u=rw,g=r,o=- /challenge/pwn will set the user permissions to read and write, the group permissions to read-only, and the world permissions to nothing at all
+Keep in mind, that -, appearing after = is in a different context than if it appeared directly after the u, g, or o (in which case, it would cause specific bits to be removed, not everything).
+
+Solution -
+`/challenge/run` <br>
+`chmod u=wx,g=-,o=x /cha
+llenge/pwn` <br>
+then solving the 8 as per requirement <br>
+then <br>
+`chmod u+r /flag` <br>
+
+## 8- The SUID Bit
+Solution -
+`hacker@permissions~the-suid-bit:/home$ chmod u+s /challenge/getroot` <br>
+`hacker@permissions~the-suid-bit:/home$ cat/flag`<br>
+`bash: cat/flag: No such file or directory`<br>
+`hacker@permissions~the-suid-bit:/home$ cat /flag`<br>
+`cat: /flag: Permission denied`<br>
+`hacker@permissions~the-suid-bit:/home$ /challenge/getroot`<br>
+`SUCCESS! You have set the suid bit on this program, and it is running as root!`<br> 
+`Here is your shell...`<br>
+`root@permissions~the-suid-bit:/home# cat /flag`<br>
+`pwn.college{s_m2nlNIeQ37-zXZ9NVuvSb7nLj.dNTM2QDLzQTO0czW}`<br>
