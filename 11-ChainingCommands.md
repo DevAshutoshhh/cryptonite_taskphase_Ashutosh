@@ -28,23 +28,23 @@ Exit: Ctrl + X
 
 I used vim 
 Solution -
- `vim x.sh`
- `i` to input
- `:wq` to save and quit
- `bash x.sh`
+ `vim x.sh`<br>
+ `i` to input<br>
+ `:wq` to save and quit<br>
+ `bash x.sh`<br>
 
  ## 3-Redirecting Script Outputs
 
 Solution-
- `vim x.sh`
- `i` to input
- `:wq` to save and quit
- `cat x.sh`
- `bash x.sh | /challenge/solve`
+ `vim x.sh`<br>
+ `i` to input<br>
+ `:wq` to save and quit<br>
+ `cat x.sh`<br>
+ `bash x.sh | /challenge/solve`<br>
 
  ## 4-Executable Shell Scripts
 
 Solution-
-vim script.sh
-chmod +x script.sh
-./script.sh
+`vim script.sh`<br>
+`chmod +x script.sh`<br>
+`./script.sh`<br>
