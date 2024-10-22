@@ -45,6 +45,6 @@ Solution-
  ## 4-Executable Shell Scripts
 
 Solution-
-`vim script.sh`<br>
-`chmod +x script.sh`<br>
-`./script.sh`<br>
+`vim new.sh`<br>
+`chmod +x new.sh`<br>
+`./new.sh`<br>
