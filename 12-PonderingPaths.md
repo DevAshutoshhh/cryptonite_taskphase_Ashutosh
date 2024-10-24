@@ -22,6 +22,9 @@ Here, we create a custom 'win' command that outputs the flag.<br>
 Instead of overwriting PATH, we append our custom directory to it.<br>
 
 Solution-
+`cd`<br>
+`vim win`<br>
+`cat win`<br>
 `echo "cat /flag" > win`<br>
 `chmod +x win`<br>
 `echo $PATH`<br>
